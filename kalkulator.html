@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            background-image: url(http://gihsfilm.weebly.com/uploads/3/1/4/5/31458585/walking-white-stick-figure-w-background-2_orig.gif);
+            background-size: cover;
+        }
+        h1{
+            background-color: red;
+            padding: 10px 200px;
+            margin: 10px 300px;
+            border-radius: 10px;
+        }
+        h2{
+            text-align: center;
+            background-color: violet;
+            border-radius: 10px;
+            margin: 20px 300px;
+            padding: 10px 10px;
+        }
+        #inputan, select{
+            text-align: center;
+            border-radius: 10px;
+            padding:10px 10px;
+            margin: 10px 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #btn{
+            padding: 10px 10px;
+            border-radius: 10px;
+            margin: 20px 300px;
+        }
+        #box{
+            background-color: greenyellow;
+            padding: 10px 10px;
+            border-radius: 10px;
+            margin: 20px 300px;
+            box-shadow: 100px;
+        }
+        #demo{
+            color: white;
+            font-size: 30px;
+            margin: 20px 500px;
+            border-radius: 10px;
+            background-color: black;
+        }
+    </style>
+    <script src="App.js"></script>
+</head>
+<body>
+    <h1>Tester</h1>
+    <h2>Converter suhu</h2>
+    <div id="box">
+        <select id="input1">
+            <option>celcius</option>
+            <option>kelvin</option>
+            <option>fahrenheit</option>
+            <option>reamur</option>
+        </select>
+        <input type="number" placeholder="Masukkan nilai" id="inputan">
+        <select id="input2">
+            <option>celcius</option>
+            <option>kelvin</option>
+            <option>fahrenheit</option>
+            <option>reamur</option>
+        </select>
+        <span></span>
+        <button id="btn" onclick="terminate()">Convert</button>
+    </div>
+    <p id="demo"></p>
+    <script>
+        document.querySelector("btn").addEventListener("click", terminate);
+        function terminate(){
+            const v = document.getElementById("inputan").value;
+            const i1 = document.getElementById("input1").value;
+            const i2 = document.getElementById("input2").value;
+            if(i1=="celcius" && i2=="kelvin") document.getElementById("demo").innerHTML = v*1+273.15 + " Kelvin";
+            else if(i1=="celcius" && i2=="celcius") document.getElementById("demo").innerHTML = v + "° Celcius";
+            else if(i1=="celcius" && i2=="fahrenheit") document.getElementById("demo").innerHTML = 9/5*v+32 + "° Fahrenheit";
+            else if(i1=="celcius" && i2=="reamur") document.getElementById("demo").innerHTML = 4/5*v + "° Reamur";
+            else if(i1=="kelvin" && i2=="celcius") document.getElementById("demo").innerHTML = v-273.15 + "° Celcius";
+            else if(i1=="kelvin" && i2=="kelvin") document.getElementById("demo").innerHTML = v + " Kelvin";
+            else if(i1=="kelvin" && i2=="fahrenheit") document.getElementById("demo").innerHTML = 9/5*(v-273.15) +"° Fahrenheit";
+            else if(i1=="kelvin" && i2=="reamur") document.getElementById("demo").innerHTML = 4/5*(v-273.15) + "° Reamur";
+            else if(i1=="fahrenheit" && i2=="celcius") document.getElementById("demo").innerHTML = 5/9*(v-32) + "° Celcius";
+            else if(i1=="fahrenheit" && i2=="kelvin") document.getElementById("demo").innerHTML = 5/9*(v-32)+273.15 + " Kelvin";
+            else if(i1=="fahrenheit" && i2=="fahrenheit") document.getElementById("demo").innerHTML = v + "° Fahrenheit";
+            else if(i1=="fahrenheit" && i2=="reamur") document.getElementById("demo").innerHTML = 4/9*(v-32) + "° Reamur";
+            else if(i1=="reamur" && i2=="celcius") document.getElementById("demo").innerHTML = 5/4*v + "° Celcius";
+            else if(i1=="reamur" && i2=="kelvin") document.getElementById("demo").innerHTML = 5/4*v+273.15 + " Kelvin";
+            else if(i1=="reamur" && i2=="fahrenheit") document.getElementById("demo").innerHTML = 9/4*v+32 + "° Fahrenheit";
+            else if(i1=="reamur" && i2=="reamur") document.getElementById("demo").innerHTML = v + "° Reamur";
+        }
+    </script>
+</body>
+</html>
