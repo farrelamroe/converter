@@ -66,6 +66,8 @@ h2{
     #input1, #inputan, #input2, #btn{
         margin: 10px 20px;
         padding: 10px 10px;
-
+    }
+    #demo{
+        margin: 0;
     }
 }
