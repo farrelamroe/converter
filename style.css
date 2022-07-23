@@ -34,7 +34,7 @@ h2{
     margin: 20px 300px;
     box-shadow: 2px 2px 2px 2px grey;
 }
-#box{
+.box{
     background-color: greenyellow;
     padding: 10px 10px;
     border-radius: 10px;
@@ -47,4 +47,25 @@ h2{
     margin: 20px 500px;
     border-radius: 10px;
     background-color: black;
+}
+@media screen and (max-width: 1300px){
+    body{
+        background-size: cover;
+        padding: 10px 10px;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 10px;
+    }
+    h1,h2{
+        margin: 10px 10px;
+        align-content: center;
+        padding: 10px 10px;
+    }
+    #input1, #inputan, #input2, #btn{
+        margin: 10px 20px;
+        padding: 10px 10px;
+
+    }
 }
